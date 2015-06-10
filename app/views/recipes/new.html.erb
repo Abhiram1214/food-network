@@ -1,0 +1,55 @@
+<style>
+  .form-control{
+    width: 250px;
+  }
+  
+  .ingredients{
+    height:400px;
+    width: 500px;
+    margin-left: 30px;
+  }
+  
+  
+  .description{
+    height:400px;
+    width: 500px;
+    margin-left: 30px;
+  }
+</style>
+
+<div class="container">
+    <h1>New recipe</h1>
+
+     <%= form_for(@new_recipe, :html => { :multipart => true }) do |f| %>
+
+        <div>
+           <%= f.label :Chef %><br />
+           <%= f.text_field :chef,:class=>"form-control" %>
+        </div>   <br />
+  
+        <div>
+            <%= f.label :Recipe_Name %><br />
+            <%= f.text_field :recipe , :class=>"form-control"%><br />
+        </div><br />
+  
+        <div>
+             <%= f.label :Ingredients %><br />
+            <%= f.text_field :ingredients, :class=>"form-control ingredients" %><br />
+        </div>   <br />
+  
+        <div>
+             <%= f.label :Description %><br />
+             <%= f.text_field :description , :class=>"form-control description"%><br />
+        </div>   <br />
+    
+    
+        <div>
+            <%= f.label :avatar %><br />
+            <%= f.file_field :avatar %><br />
+        </div><br />
+     
+        <div>
+           <%= f.submit 'Create' %>
+         </div><br />
+     <% end %>
+</div>

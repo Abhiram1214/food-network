@@ -1,0 +1,22 @@
+<style>
+  .main-block{
+    height: 800px;
+    margin-top: 250px;
+  }
+</style>
+<% @all_recipes.each do |recipes| %>
+   
+   <div class="container main-block">
+    <div class="col-md-5 primary">
+     <%= image_tag recipes.avatar(:gallery) %>
+     
+     <div>
+       <%= link_to "Like", likes_path(:recipe_id=>recipes.id) %>
+     </div>
+    </div>
+    <div class="col-md-1">
+       
+    </div>
+   </div>
+   
+<%end%>
